@@ -17,9 +17,16 @@ cp zshrc ~/.zshrc
 ```
 
 ```bash
+cp zellij_aliases ~/.zellij_aliases
+```
+
+```bash
 cp .tmux.conf ~/.tmux.conf
 ```
 
+```bash
+cp config.kdl ~/.config/zellij/config.kdl
+```
 
 ## Save
 
@@ -38,5 +45,13 @@ cp ~/.zshrc zshrc
 ```
 
 ```bash
+cp ~/.zellij_aliases zellij_aliases
+```
+
+```bash
 cp ~/.tmux.conf .tmux.conf
+```
+
+```bash
+zellij setup --dump-config > config.kdl
 ```
