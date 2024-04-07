@@ -5,3 +5,5 @@ size = 14
 family = "DroidSansMono Nerd Font"
 style = "Regular"
 
+[window]
+option_as_alt = "Both"
