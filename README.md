@@ -1,5 +1,11 @@
 # config
 
+## Install
+
+brew install fzf
+
+brew install zoxide
+
 ## Load
 
 Copy the files to the correct location:
