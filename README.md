@@ -14,6 +14,8 @@ brew install zoxide
 
 brew install stow
 
+brew install tlrc
+
 brew tap homebrew/cask-fonts
 brew install --cask font-0xproto-nerd-font
 
