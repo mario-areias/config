@@ -4,6 +4,7 @@ This repo configures some common applications and files
 
 ## Install
 
+```bash
 brew install eza
 
 brew install bat
@@ -18,6 +19,7 @@ brew install tlrc
 
 brew tap homebrew/cask-fonts
 brew install --cask font-0xproto-nerd-font
+```
 
 Configure nvim [here](https://github.com/mario-areias/nvim)
 
