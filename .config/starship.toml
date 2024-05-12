@@ -2,14 +2,18 @@
 
 format = """
 [](surface0)\
-[$os $custom $username](bg:surface0 fg:text)\
-[](bg:peach fg:surface0)\
+[$os $custom](bg:surface0 fg:text)\
+[](fg:surface0 bg:peach )\
 $directory\
-[](fg:peach bg:green)\
+[ ](fg:peach)\
+$character"""
+
+right_format = """
+[](surface0)\
 $git_branch\
 $git_status\
 $git_metrics\
-[](fg:green bg:teal)\
+[](fg:surface0 bg:teal)\
 $rust\
 $golang\
 $nodejs\
@@ -20,8 +24,8 @@ $python\
 $docker_context\
 [](fg:blue bg:purple)\
 $time\
-[ ](fg:purple)\
-$line_break$character"""
+[](fg:purple)\
+"""
 
 palette = 'catppuccin_mocha'
 
@@ -30,31 +34,14 @@ disabled = false
 style = "bg:surface0 fg:text"
 
 [os.symbols]
-Windows = "󰍲"
 Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
 Macos = ""
-Manjaro = ""
 Linux = "󰌽"
-Gentoo = "󰣨"
 Fedora = "󰣛"
 Alpine = ""
 Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
 CentOS = ""
 Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-
-[username]
-show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
-format = '[$user ]($style)'
 
 [directory]
 style = "fg:mantle bg:peach"
@@ -72,63 +59,59 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol $branch(:$remote_branch) ](fg:base bg:green)]($style)'
+format = '[[ $symbol $branch(:$remote_branch) ](fg:green bg:surface0)]($style)'
 
 [git_status]
 style = "bg:teal"
-# format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
-format = '[$all_status](fg:base bg:green)($style)'
+format = '[$all_status](fg:green bg:surface0)($style)'
 
 [git_metrics]
 style = "bg:teal"
-added_style = "fg:base bg:green"
-deleted_style = "fg:red bg:green"
-format = "([+$added]($added_style))[]($added_style)"
+added_style = "fg:green bg:surface0"
+deleted_style = "fg:red bg:surface0"
+format = "([+$added]($added_style)[-$deleted]($deleted_style))[]($added_style)"
 disabled = false
 
 [nodejs]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [rust]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [golang]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [java]
 symbol = " "
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [kotlin]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [python]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+format = '[[ $symbol ](fg:base bg:teal)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:blue"
+format = '[[ $symbol( $context) ](fg:mantle bg:blue)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
-
-[line_break]
-disabled = false
 
 [custom.air]
 command = "echo -n  "
