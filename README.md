@@ -12,26 +12,8 @@ brew install stow
 
 Download: [OxProto Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip)
 
-## Load
+Configure nvim [here](https://github.com/mario-areias/nvim)
 
-Copy the files to the correct location:
+## Run
 
-```bash
-cp alacritty.toml ~/.config/alacritty/alacritty.toml
-```
-
-```bash
-cp starship.toml ~/.config/starship.toml
-```
-
-```bash
-cp zshrc ~/.zshrc
-```
-
-```bash
-cp zellij_aliases ~/.zellij_aliases
-```
-
-```bash
-cp config.kdl ~/.config/zellij/config.kdl
-```
+stow --target=$HOME .
