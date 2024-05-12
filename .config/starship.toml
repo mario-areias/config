@@ -3,9 +3,9 @@
 format = """
 [](surface0)\
 [$os $custom](bg:surface0 fg:text)\
-[](fg:surface0 bg:peach )\
+[](fg:surface0 bg:maroon )\
 $directory\
-[ ](fg:peach)\
+[ ](fg:maroon)\
 $character"""
 
 right_format = """
@@ -44,7 +44,7 @@ CentOS = ""
 Debian = "󰣚"
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:mantle bg:maroon"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -110,7 +110,7 @@ format = '[[ $symbol( $context) ](fg:mantle bg:blue)]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:peach"
+style = "bg:maroon"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
 [custom.air]
