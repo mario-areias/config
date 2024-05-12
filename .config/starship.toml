@@ -66,7 +66,6 @@ style = "bg:teal"
 format = '[$all_status](fg:green bg:surface0)($style)'
 
 [git_metrics]
-style = "bg:teal"
 added_style = "fg:green bg:surface0"
 deleted_style = "fg:red bg:surface0"
 format = "([+$added]($added_style)[-$deleted]($deleted_style))[]($added_style)"
