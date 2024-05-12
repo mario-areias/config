@@ -4,13 +4,18 @@ This repo configures some common applications and files
 
 ## Install
 
+brew install eza
+
+brew install bat
+
 brew install fzf
 
 brew install zoxide
 
 brew install stow
 
-Download: [OxProto Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip)
+brew tap homebrew/cask-fonts
+brew install --cask font-0xproto-nerd-font
 
 Configure nvim [here](https://github.com/mario-areias/nvim)
 
