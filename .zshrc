@@ -5,6 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Added Go binaries to Path
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 
 # Setting up Neovim as default editor
 export EDITOR="nvim"

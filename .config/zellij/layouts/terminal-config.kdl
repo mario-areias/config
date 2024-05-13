@@ -1,0 +1,29 @@
+layout {
+  pane split_direction="vertical" {
+    pane {
+      name "nvim config"
+
+      command "nvim"
+      cwd "$HOME/.config/nvim"
+      borderless true
+    }
+    pane split_direction="horizontal" {
+      pane {
+        name "dotfiles"
+
+        command "nvim"
+        cwd "$HOME/Projects/config"
+        borderless true
+      }
+      pane {
+        name "commands"
+
+        cwd "$HOME/.config/nvim"
+        borderless true
+      }
+    }
+  }
+  pane size=2 borderless=true {
+      plugin location="status-bar"
+  }
+}
