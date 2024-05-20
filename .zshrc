@@ -79,3 +79,54 @@ alias cat="bat"
 
 # Added zellij aliases
 source ~/.zellij_aliases
+
+### Zellij Key Binds ###
+
+function zellij_up() {
+  zellij action move-focus up
+}
+
+function zellij_down() {
+  zellij action move-focus down
+}
+
+function zellij_left() {
+  zellij action move-focus left
+}
+
+function zellij_right() {
+  zellij action move-focus right
+}
+
+# The plugin will auto execute this zvm_after_lazy_keybindings function
+# Here we define custom widgets to be executed in normal and visual mode _only_.
+function zvm_after_lazy_keybindings() {
+  # Here we define the custom widgets
+  zvm_define_widget zellij_up
+  zvm_define_widget zellij_down
+  zvm_define_widget zellij_left
+  zvm_define_widget zellij_right
+
+  # In normal mode, we bind C-[h,j,k,l] to execute zellij command to move focus
+  zvm_bindkey vicmd '^k' zellij_up
+  zvm_bindkey vicmd '^j' zellij_down
+  zvm_bindkey vicmd '^h' zellij_left
+  zvm_bindkey vicmd '^l' zellij_right
+}
+
+# The plugin will auto execute this zvm_after_init function
+# Here we define custom widgets to be executed in insert mode.
+function zvm_after_init() {
+  # Here we define the custom widgets
+  zvm_define_widget zellij_up
+  zvm_define_widget zellij_down
+  zvm_define_widget zellij_left
+  zvm_define_widget zellij_right
+
+
+  # In insert mode, we bind C-[h,j,k,l] to execute zellij command to move focus
+  zvm_bindkey viins '^k' zellij_up
+  zvm_bindkey viins '^j' zellij_down
+  zvm_bindkey viins '^h' zellij_left
+  zvm_bindkey viins '^l' zellij_right
+}
