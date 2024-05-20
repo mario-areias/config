@@ -1,0 +1,12 @@
+layout {
+    pane split_direction="vertical" {
+        pane borderless=true {
+        }
+
+        pane borderless=true {
+        }
+    }
+    pane size=2 borderless=true {
+        plugin location="status-bar"
+    }
+}
