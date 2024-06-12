@@ -62,7 +62,8 @@ setopt HIST_EXPIRE_DUPS_FIRST
 ### Other Tools ###
 eval "$(starship init zsh)"
 
-eval "$(fzf --zsh)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 eval "$(zoxide init --cmd cd zsh)"
 
