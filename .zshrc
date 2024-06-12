@@ -62,9 +62,6 @@ setopt HIST_EXPIRE_DUPS_FIRST
 ### Other Tools ###
 eval "$(starship init zsh)"
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
-
 eval "$(zoxide init --cmd cd zsh)"
 
 ### Aliases ###
@@ -124,6 +121,10 @@ function zvm_after_init() {
   zvm_define_widget zellij_left
   zvm_define_widget zellij_right
 
+  # Set up fzf key bindings and fuzzy completion
+  # sourcing here because zsh vim mode overwrites Ctrl-R
+  # https://github.com/jeffreytse/zsh-vi-mode/issues/242
+  source <(fzf --zsh)
 
   # In insert mode, we bind C-[h,j,k,l] to execute zellij command to move focus
   zvm_bindkey viins '^k' zellij_up
@@ -131,3 +132,25 @@ function zvm_after_init() {
   zvm_bindkey viins '^h' zellij_left
   zvm_bindkey viins '^l' zellij_right
 }
+
+### Custom functions ###
+# https://junegunn.github.io/fzf/tips/ripgrep-integration/
+# ripgrep->fzf->vim [QUERY]
+rfv() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            nvim {1} +{2}     # No selection. Open the current line in Vim.
+          else
+            nvim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+  fzf < /dev/null \
+      --disabled --ansi --multi \
+      --bind "start:$RELOAD" --bind "change:$RELOAD" \
+      --bind "enter:become:$OPENER" \
+      --bind "ctrl-o:execute:$OPENER" \
+      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+      --delimiter : \
+      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      --preview-window '~4,+{2}+4/3,<80(up)' \
+      --query "$*"
+)
