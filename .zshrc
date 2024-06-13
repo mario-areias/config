@@ -40,6 +40,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Bat theme
 export BAT_THEME="Catppuccin Mocha"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Added Go binaries to Path
 export PATH="$HOME/go/bin:$PATH"
