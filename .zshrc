@@ -53,6 +53,19 @@ export FZF_DEFAULT_OPTS=" \
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$(brew --prefix)/opt/curl/bin:$PATH"
 
+# Added JDK for path
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="$(brew --prefix)/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+
+# Added Visual studio binaries to PATH
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+
+# Added CodeQL to Path
+export PATH="$HOME/codeql:$PATH"
+
+# Export .local/bin
+export PATH="$HOME/.local/bin:$PATH"
+
 # Setting up Neovim as default editor
 export EDITOR="nvim"
 
