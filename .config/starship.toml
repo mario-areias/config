@@ -22,7 +22,9 @@ $kotlin\
 $python\
 [](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:purple)\
+[](fg:blue bg:green)\
+${custom.kube}\
+[](fg:green bg:purple)\
 $time\
 [](fg:purple)\
 """
@@ -121,6 +123,12 @@ style = "bg:surface0 fg:text"
 command = "echo -n 󰇅"
 when = ''' [[ $(hostname) == *"-mini."* ]] '''
 style = "bg:surface0 fg:text"
+
+[custom.kube]
+symbol = "☸ "
+command = "kubectx -c"
+when = true
+format = '[[ $symbol$output ](fg:base bg:green)]($style)'
 
 [character]
 disabled = false
