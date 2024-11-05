@@ -120,6 +120,11 @@ function zellij_right() {
   zellij action move-focus right
 }
 
+bindkey '^k' zellij_up
+bindkey '^j' zellij_down
+bindkey '^h' zellij_left
+bindkey '^l' zellij_right
+
 function zellij_keybindings() {
   # Here we define the custom widgets
   zvm_define_widget zellij_up
