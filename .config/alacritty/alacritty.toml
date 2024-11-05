@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
 
 [font]
 size = 14
@@ -12,3 +9,8 @@ style = "Regular"
 [window]
 option_as_alt = "Both"
 decorations = "Buttonless"
+
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
